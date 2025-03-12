@@ -1,0 +1,15 @@
+Required Plugins
+
+#Startup Trigger
+#Groovy
+New Item > Freestyle project > Build Triggers (Build when job nodes start) > Build steps (Execute system Groovy script) > Groovy command and the following script.....
+
+Copy and paste the following script:
+
+System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "default-src * 'unsafe-inline' 'unsafe-eval'; img-src * data:; style-src * 'unsafe-inline'; font-src * data:; connect-src *;")
+println "CSP set to: ${System.getProperty('hudson.model.DirectoryBrowserSupport.CSP')}"
+
+______________________________________
+
+build fails and go to Manage Jenkins and Approve the script
+Even though build fails it works
